@@ -78,3 +78,28 @@ const displayMovements = function (movements) {
 
 displayMovements(account1.movements);
 
+////////////////////////////////////////////////
+//Map method:-
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+
+const euroToUSD = 1.1;
+
+const movementsUSD = movements.map(function (mov) {
+  return mov * euroToUSD;
+  //return 23;
+});
+console.log(movements);
+console.log(movementsUSD);
+//map method does not mutate the existing array it will make the copy of existing array and this is used where we have do some operations on array elements
+
+//with arrow:
+const movementsUSDarrow = movements.map(mov => mov * euroToUSD);
+console.log(movementsUSDarrow);
+
+//with for of:
+const movementsUSDfor = [];
+for (const mov of movements) {
+  movementsUSDfor.push(mov * euroToUSD);
+}
+console.log(movementsUSDfor);
+//same result but this approach is not so ideal
